@@ -1,0 +1,68 @@
+{# empty Twig template #}
+
+
+{% extends 'BestTripWeeGoBundle::layout.html.twig' %}
+{% block include_head %}<link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}" media="screen">{% endblock %}
+{% block include_foot %}         <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>{% endblock %} 
+{% block titre_page %}Lieux{% endblock %}
+{% block titre_rubrique %}Modifier Restaurant{% endblock %}
+{% block main_content  %}
+
+
+
+    <form method="POST" action="{{path('best_trip_wee_go_modifier',{id:hotel.id,statut:hotel.statut}) }}" class="formulaire">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    {{form_label(form.nom)}}   
+                    {{ form_widget (form.nom, {'attr': {'placeholder': 'Nom'}}) }}	<br>
+
+                </div>
+                <div class="col-md-6">
+                    {{form_label(form.siteweb)}}  
+                    {{ form_widget (form.siteweb, {'attr': {'placeholder': 'Site Web'}}) }}
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{form_label(form.adresse)}}  
+                    {{ form_widget (form.adresse, {'attr': {'placeholder': 'Adresse'}}) }}
+                </div>
+                <div class="col-md-6">
+                    {{form_label(form.service)}}     
+                    {{ form_widget (form.service, {'attr': {'placeholder': 'Service'}}) }}
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{form_label(form.nbrEtoiles)}}                 
+                    {{ form_widget (form.nbrEtoiles, {'attr': {'placeholder': 'Nombre Etoiles'}}) }} 
+                </div>
+                <div class="col-md-6">
+                    {{form_label(form.emplacement)}}	
+                    {{ form_widget (form.emplacement, {'attr': {'placeholder': 'Emplacement'}}) }} 
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{form_label(form.numtel)}}    
+                    {{ form_widget (form.numtel, {'attr': {'placeholder': 'Numero Tel'}}) }}
+                </div>
+                <div class="col-md-6">
+                    {{form_label(form.idVille)}}    
+                    {{ form_widget (form.idVille) }}
+                </div>
+
+            </div>
+            <div class="row">
+                <input type="submit" value="Ajouter"/>
+
+            </div>
+        </div>
+
+
+    </form>
+{% endblock %}                           

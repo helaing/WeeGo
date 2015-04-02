@@ -1,0 +1,44 @@
+{# empty Twig template #}
+
+
+
+{# empty Twig template #}
+{% extends "BestTripUserBundle::Layoutadmin.html.twig" %}
+ {% block my_app_user  %}
+     <ul class="pricing-table basic" >
+        <li class="title" >       
+            <table   align="center" border="1px" style="border-color: #75c5c3; border-width:thin; border-style:solid;">  
+                <tr style="color: white;">
+                    <td>Nom</td>  
+                    <td>Prenom</td>
+                    <td>Pseudo</td> 
+                    <td>Email </td> 
+                    <td>Pays</td> 
+                    <td style="display:none">image</td>
+                    <td>Image</td>
+                    <td>supprimer</td>
+                </tr>
+                {% for user in users %}
+                <tr style=" background-color:#FFF; ">
+                    <td style="color: #75c5c3;">{{ user.nom|e }}</td>
+                    <td style="color: #75c5c3;">{{ user.prenom|e }}</td>
+                      
+                    <td style="color: #75c5c3;">{{ user.pseudo|e }}</td>
+                     
+                    <td style="color: #75c5c3;">{{ user.email|e }}</td>
+                      
+                    <td style="color: #75c5c3;">{{ user.pays|e }}</td>
+                     
+                    
+                    <td style="color: #75c5c3;"> <img src="{{ asset('uploads/documents/' ~user.image) }}" alt="" /> </td>
+                   <td>   
+			<td><a href="{{path('supprimer_user',{username:user.username})}}">Supprimer</a></td>
+                    </td>  
+                     <td></td>
+                    
+                {% endfor %}
+            </table>
+        </li>
+    </ul>
+ {% endblock %}
+ 

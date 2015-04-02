@@ -1,0 +1,15 @@
+best_trip_mail_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BestTripMailBundle:Default:index }
+    
+my_app_mail_succ:
+    path: /succ
+    defaults: { _controller: BestTripMailBundle:Mail:index }
+
+my_app_mail_form:
+    path: /mail
+    defaults: { _controller: BestTripMailBundle:Mail:new }
+
+my_app_mail_sendpage:
+    path: /sendmail
+    defaults: { _controller: BestTripMailBundle:Mail:sendMail }

@@ -1,0 +1,58 @@
+best_trip_wee_go_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BestTripWeeGoBundle:Default:index }
+best_trip_wee_go_afficher:
+    path:     /afficher
+    defaults: { _controller: BestTripWeeGoBundle:Lieu:afficher }
+best_trip_wee_go_infoLieu:
+    path:     /infoLieu/{id}/{statut}
+    defaults: { _controller: BestTripWeeGoBundle:Lieu:infoLieu }
+    
+ajoutRecommandation:
+    path: /ajoutRecommandation/{idU}/{note}/{texte}/{idL}
+    defaults: { _controller: BestTripWeeGoBundle:RecommandationLieu:ajout }
+
+newRecommandation:
+    path: /newRecommandation
+    defaults: { _controller: BestTripWeeGoBundle:RecommandationLieu:ajout }
+    
+mesRecommandations:
+    path: /mesRecommandations/{idU}
+    defaults: { _controller: BestTripWeeGoBundle:RecommandationLieu:mesRecommandations }
+    
+supprimerRecommandation:
+    path: /supprimerRecommandations/{id}/{idU}
+    defaults: { _controller: BestTripWeeGoBundle:RecommandationLieu:supprimer }
+  
+best_trip_wee_go_ajoutHotel:
+    path:     /ajoutHotel
+    defaults: { _controller: BestTripWeeGoBundle:Lieu:ajoutHotel }
+best_trip_wee_go_ajoutRestaurant:
+    path:     /ajoutRestaurant
+    defaults: { _controller: BestTripWeeGoBundle:Lieu:ajoutRestaurant }
+best_trip_wee_go_afficherLA:
+    path:     /afficherLA
+    defaults: { _controller: BestTripWeeGoBundle:Lieu:afficherLA }
+best_trip_wee_go_supprimerLieu:
+    path:     /supprimerLieu/{id} 
+    defaults: { _controller: BestTripWeeGoBundle:Lieu:supprimerLieu }
+best_trip_wee_go_modifier:
+    path:     /modifier/{id}/{statut} 
+    defaults: { _controller: BestTripWeeGoBundle:Lieu:modifier }
+ajouterExperience:
+    path:     /ajouterExperience
+    defaults: { _controller: BestTripWeeGoBundle:Experience:ajouter } 
+    
+afficherExperience:
+    path:     /afficherExperience
+    defaults: { _controller: BestTripWeeGoBundle:Experience:afficher } 
+showExperience:
+    path:     /showExperience
+    defaults: { _controller: BestTripWeeGoBundle:Experience:show }
+supprimerExperience:
+    path:     /supprimerExperience/{id} 
+    defaults: { _controller: BestTripWeeGoBundle:Experience:supprimer }
+afExperience:
+    path:     /afExperience/{id} 
+    defaults: { _controller: BestTripWeeGoBundle:Experience:af }
+ 

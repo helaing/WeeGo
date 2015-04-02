@@ -1,0 +1,50 @@
+{% extends 'BestTripWeeGoBundle::layout.html.twig' %}
+
+{% block main_content %}
+
+
+    <div class="item news-item">
+        <div class="container">
+            {% for r in recommandations %}
+                <div class="row">
+                    <div class="col-md-3 inner-item">
+                        <img alt="" src="{{ asset('upload/photo1.jpg') }}">
+                        <div class="hover-item">
+                            <ul>
+                                
+                                <li><a class="date" href="#"><i class="fa fa-clock-o"></i>{{ r.dateRecommandation|date('d/m/Y')}}</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <a href="{{ path('best_trip_wee_go_infoLieu',{id:r.idLieu.id})}}"><h5>{{ r.idLieu.nom }}</h5></a>
+                        <img src="{{ asset('images/stars/'~r.note~'.jpg') }}" style="border: 0; display: inline; float: none;"/>
+                        <p>{{ r.texte }}</p>
+                        <a class="read-more" href="{{ path('supprimerRecommandation',{id:r.id,idU:r.utilisateur.id}) }}" style="border: #e0304a solid 1px; color: #e0304a;">Supprimer<i class="fa fa-trash-o"></i></a>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <ul class="pagination-list">
+        <li><a class="active" href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+    </ul>
+
+
+{% endblock %}

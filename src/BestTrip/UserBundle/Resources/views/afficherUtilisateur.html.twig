@@ -1,0 +1,36 @@
+{# empty Twig template #}
+{# empty Twig template #}
+{% extends extends "FOSUserBundle::layout.html.twig" %}
+ {% block main_content %}
+     <ul class="pricing-table basic" >
+        <li class="title" >       
+            <table   align="center" border="1px" style="border-color: #75c5c3; border-width:thin; border-style:solid;">  
+                <tr style="color: white;">
+                    <td>Nom</td>  
+                    <td>Prenom</td>
+                    <td>Pseudo</td> 
+                    <td>Email </td> 
+                    <td>Date de naissance</td> 
+                    <td style="display:none">image</td>
+                    <td>modifier </td> 
+                    <td>supprimer</td>
+                </tr>
+                {% for u in users %}
+                <tr style=" background-color:#FFF; ">
+                    <td></td>
+                    <td style="color: #75c5c3;"></td>
+                    <td></td>   
+                    <td style="color: #75c5c3;"></td>
+                   <td>   
+			
+                    </td>  
+                     <td></td>
+                    <td style="color: #75c5c3;"><a href="{{path('modifier_guide',{id:g.idG})}}">Modifier</a></td>
+                    <td><a href="{{path('supprimer_guide',{id:g.idG})}}">Supprimer</a></td>
+                </tr>    
+                {% endfor %}
+            </table>
+        </li>
+    </ul>
+ {% endblock %}
+ 

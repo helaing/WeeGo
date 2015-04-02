@@ -1,0 +1,280 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<script type="text/javascript" src="{{ asset('bundles/weego/js/jquery.min.js') }}"></script>
+	
+<script type="text/javascript" src="{{ asset('bundles/weego/js/jquery.migrate.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $('#pays').change(function(){
+                   var flag_url ='/BestTrip/web/bundles/weego/images/Flags/'+this.value+'.png';
+                   $('#drapeau').attr('src',flag_url);
+               });     
+            
+            });
+            </script>
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register ">
+    
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {{ form_label(form.username, "Nom d'utilisateur:  ") }}
+                {{ form_widget(form.username) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_errors(form.username) }}
+            </div>    
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                 {{ form_label(form.nom, "Nom:  ") }}
+    {{ form_widget(form.nom) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_errors(form.nom) }}
+            </div>    
+            
+        </div>
+       
+    
+    
+            <div class="row">
+            <div class="col-md-8">
+                 {{ form_label(form.prenom, "Prenom:  ") }}
+                  {{ form_widget(form.prenom) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_errors(form.prenom) }}
+            </div>    
+            
+        </div>
+             
+        <div class="row">
+            <div class="col-md-8">
+                {{ form_label(form.pseudo, "Pseudo:  ") }}
+    {{ form_widget(form.pseudo) }} 
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.pseudo) }}            </div>    
+            
+        </div>
+    <div class="row">
+            <div class="col-md-8">
+                {{ form_label(form.email, "Email ") }}
+    {{ form_widget(form.email) }}
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.email)}}           </div>    
+            
+        </div>
+    
+    <div class="row">
+            <div class="col-md-8">
+                {{ form_label(form.plainPassword.first, "Mot de pass ") }} 
+    {{ form_widget(form.plainPassword.first) }}
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.plainPassword.first)}}          </div>    
+            
+        </div>
+     
+     <div class="row">
+            <div class="col-md-8">
+                {{ form_label(form.plainPassword.second, "Confirmer Mot de pass ") }}
+    {{ form_widget(form.plainPassword.second) }} </br>
+    {{ form_row(form._token) }}
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.plainPassword.second) }}       </div>    
+            
+        </div>
+   
+    <div class="row">
+            <div class="col-md-8">
+                {{ form_label(form.date_naissance, "Date de naissance:  ") }}
+    {{ form_widget(form.date_naissance) }}
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.date_naissance) }}     </div>    
+            
+        </div>
+    <div class="row" style="display: none;">
+            <div class="col-md-8">
+                {{ form_label(form.date_inscrit, "Date d'inscription:  ") }}
+    {{ form_widget(form.date_inscrit) }}
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.date_inscrit) }}     </div>    
+            
+        </div>
+     
+        <div class="row" style="display: none;">
+            <div class="col-md-8">
+                {{ form_label(form.roles, "Rloes:  ") }}
+    {{ form_widget(form.roles) }}
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.roles) }}     </div>    
+            
+        </div>
+    
+     <div class="row" >
+            <div class="col-md-8">
+                {{ form_label(form.file, "Image:  ") }}
+    {{ form_widget(form.file) }}
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.file) }}     </div>    
+            
+        </div>  
+    <div class="row" >
+            <div class="col-md-8">
+                {{ form_label(form.pays, "Pays ") }} </label>
+    {{ form_widget(form.pays) }} </br>
+            </div>
+            <div class="col-md-4">
+{{ form_errors(form.pays) }}    </div>    
+            
+        </div> 
+    
+        <div class="row" >
+            <div class="col-md-8">         
+    
+        <label for="pays"> Pays  </label>
+        <select id="pays">
+            <option value="Algeria">Algeria<option/>
+            <option value="Albania">Albania </option>
+            <option value="Afghanistan"> Afghanistan</option>
+            <option value="Andorra"> Andorra</option>
+            <option value="Angola">Angola </option>
+            <option value="Anguilla">Anguilla </option>
+            <option value="Antarctica">Antarctica </option>
+           <option value="Antigua &amp; Barbuda"> Antigua &amp; Barbuda</option>
+            <option value="Arab League"> Arab League</option>
+            <option value="Argentina">Argentina </option>
+            <option value="Armenia">Armenia </option>
+            <option value="Aruba">Aruba</option>
+            <option value="Australia">Australia </option>
+            <option value="Austria">Austria </option>
+            <option value="Azerbaijan">Azerbaijan </option>
+            <option value="Bahamas"> Bahamas</option>
+            <option value="Bahrain">Bahrain </option>
+            <option value="Bangladesh">Bangladesh </option>
+            <option value="Barbados">Barbados </option>
+            <option value="Belarus"> Belarus</option>
+            <option value="Belgium"> Belgium</option>
+            <option value="Belize">Belize </option>
+            <option value="Benin"> Benin</option>
+            <option value="Bermuda"> Bermuda</option>
+            <option value="Bhutan">Bhutan </option>
+            <option value="Bolivia"> Bolivia</option>
+            <option value="Bosnia &amp; Herzegovina">Bosnia &amp; Herzegovina </option>
+           <option value="Botswana">Botswana </option>
+            <option value="Brazil">Brazil </option>
+            <option value="Brunei">Brunei </option>
+            <option value="Bulgaria">Bulgaria </option>
+            <option value="Burkina Faso">Burkina Faso </option>
+            <option value="Burundi"> Burundi</option>
+           <option value="Cambodja">Cambodja </option>
+          <option value="Cameroon"> Cameroon</option>
+           <option value="Canada">Canada </option>
+           <option value="Cape Verde">Cape Verde </option>
+            <option value="Cayman Islands">Cayman Islands </option>
+           <option value="Central African Republic">Central African Republic </option>
+            <option value="Chad">Chad </option>
+            <option value="Chile"> Chile</option>
+            <option value="China">China </option>
+            <option value="Colombia">Colombia </option>
+           <option value="Commonwealth"> Commonwealth</option>
+           <option value="Comoros"> </option>
+           <option value="Congo-Brazzaville"> </option>
+            <option value="Congo-Kinshasa(Zaire)"> </option>
+           <option value="Cook Islands"> </option>
+            <option value="Costa Rica"> </option>
+            <option value="Cote d'Ivoire"> </option>
+            <option value="Croatia"> </option>
+            <option value="Cuba"> </option>
+            <option value="Cyprus"> </option>
+            <option value="Czech Republic"> </option>
+            <option value="Denmark"> </option>
+            <option value="Djibouti"> </otion>
+            <option value="Dominica"> </option>
+           <option value="Dominican Republic"> </option>
+            <option value="Ecuador"> </option>
+            <option value="Egypt"> </option>
+            <option value="El Salvador"> </option>
+            <option value="England"> </option>
+            <option value="Equatorial Guinea"> </option>
+            <option value="Eritrea"> </option>
+            <option value="Estonia"> </option>
+            <option value="Ethiopia"> </option>
+            <option value="Faroes"> </option>
+            <option value="Fiji"> </option>
+            <option value="Finland"> </option>
+            <option value="France"> </option>
+            <option value="Gabon"> </option>
+            <option value="Gambia"> </option>
+            <option value="Georgia"> </option>
+            <option value="Germany"> </option>
+            <option value="Ghana"> </option>
+            <option value="Greece"> </option>
+           <option value="Greenland"> </option>
+            <option value="Grenada"> </option>
+            <option value="Guadeloupe"> </option>
+            <option value="Guatamela"> </option>
+            <option value="Guernsey"> </option>
+          <option value="Guinea"> </option>
+            <option value="Guinea-Bissau"/>
+            <option value="Guyana"> </option>
+           <option value="Haiti"> </option>
+            <option value="Honduras"> </option>
+           <option value="Hong kong"> </option>
+           <option value="Hungary"> </option>
+            <option value="Iceland"> </option>
+            <option value="India"> </option>
+           <option value="Indonezia"> </option>
+            <option value="Iran"> </option>
+            <option value="Iraq"> </option>
+           <option value="Ireland"> </option>
+            <option value="Isle of Man"> </option>
+           <option value="Israel"> </option>
+            <option value="Italy"> </option>
+            <option value="Jamaica"> </option>
+            <option value="Japan"> </option>
+           <option value="Jersey"> </option>
+            <option value="Jordan"> </option>
+            <option value="Kazakhstan"> </option>
+            <option value="Kenya"> </option>
+            <option value="Kiribati"> </option>
+            <option value="Kosovo"> </option>
+            <option value="Kuwait"> </option>
+            <option value="Kyrgyzstan"/>
+            <option value="Laos"> </option>
+            <option value="Latvia"> </option>
+          <option value="Lebanon"> </option>
+            <option value="Lesotho"> </option>
+            <option value="Liberia"> </option>
+           <option value="Libya"> </option>
+           <option value="Liechtenshein"> </option>
+           <option value="LIthuania"> </option>
+          <option value="Luxembourg"> </option>
+            
+            
+        </select>
+        <div class="col-md-4">
+    
+ <img src="" id="drapeau"/>   
+ </div> 
+            </div>
+        </div>
+       <div class="row" >
+            <div class="col-md-8">    
+        <input type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle' )}}" />
+    </div>
+           </div>     
+        
+    
+</div>
+</form>

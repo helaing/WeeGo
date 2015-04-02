@@ -1,0 +1,55 @@
+{% extends 'BestTripWeeGoBundle::layout.html.twig' %}
+{% block include_head %}
+    <style>
+        form input[type='number']{
+            color: #716565;
+            font-size: 13px;
+            font-family: 'Open Sans', sans-serif;
+            padding: 5px 10px;
+            border: 1px solid #dcdcdc;
+            width: 100%;
+            outline: none;
+        }
+        form input[type='submit']{
+            font-size: 13px;
+            background: #6CB2B0;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            padding: 5px 10px;
+            border: 1px solid #dcdcdc;
+        }
+        form label{
+            font-size: 13px;
+
+            color: #716565;
+            font-family: 'Open Sans', sans-serif;
+            padding: 5px 10px;
+        }
+    </style>
+  
+
+{% endblock %}
+{% block main_content %}
+    <div class="container">
+        <div class="row">
+            <form method = "POST" action="{{ path('grapheChartHistogramme') }}" target="_BLANK">    
+
+                <div class="col-md-1">
+                    <label>Année:</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="number" name="annee" placeholder="Année de recherche"/>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" value="Rechercher">
+                </div>
+
+
+
+            </form>
+        </div>
+            <div class="row">
+                <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+            </div>
+    </div>
+{% endblock %}

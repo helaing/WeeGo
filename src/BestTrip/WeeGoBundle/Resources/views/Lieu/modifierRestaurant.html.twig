@@ -1,0 +1,63 @@
+{# empty Twig template #}
+
+
+{% extends 'BestTripWeeGoBundle::layout.html.twig' %}
+{% block include_head %}<link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}" media="screen">{% endblock %}
+{% block include_foot %}         <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>{% endblock %} 
+{% block titre_page %}Lieux{% endblock %}
+{% block titre_rubrique %}Modifier Restaurant{% endblock %}
+{% block main_content  %}
+
+
+
+    <form method="POST" action="{{path('best_trip_wee_go_modifier',{id:restaurant.id,statut:restaurant.statut}) }}" class="formulaire">	 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    {{form_label(form.nom)}}               
+                    {{ form_widget (form.nom, {'attr': {'placeholder': 'Nom'}}) }}	
+                </div>
+                <div class="col-md-6">
+                    {{form_label(form.siteweb)}}      
+                    {{ form_widget (form.siteweb, {'attr': {'placeholder': 'Site Web'}}) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{form_label(form.adresse)}}  
+                    {{ form_widget (form.adresse, {'attr': {'placeholder': 'Adresse'}}) }}
+                </div>
+                <div class="col-md-6">
+                    {{form_label(form.reservation)}}     
+                    {{ form_widget (form.reservation, {'attr': {'placeholder': 'Reservation'}}) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{form_label(form.jRepos)}}                      
+                    {{ form_widget (form.jRepos, {'attr': {'placeholder': 'Jours Repos'}}) }} 
+                </div>
+                <div class="col-md-6">
+                    {{form_label(form.specialite)}}	     
+                    {{ form_widget (form.specialite, {'attr': {'placeholder': 'Specialité:'}}) }} 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{form_label(form.numtel)}}                  
+                    {{ form_widget (form.numtel, {'attr': {'placeholder': 'Numero Tel'}}) }}
+                </div>
+                <div class="col-md-6">
+                    {{form_label(form.idVille)}}
+                    {{ form_widget (form.idVille) }}
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Modifier"/>
+            </div>
+
+        </div>
+
+
+    </form>
+{% endblock %}                           
